@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+body {
+  background: url("../Assets/gamerjunction-logo.png") no-repeat center center
+    fixed;
+  position: relative;
+  color: #fff;
+  font-family: Lato;
+  text-align: center;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.911);
+  z-index: -1;
+}
+
+.privacy-policy-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+}
+
+.privacy-policy-title {
+  text-align: center;
+  font-size: 55px;
+  margin-bottom: 20px;
+  color: rgb(150, 0, 0);
+  text-shadow: 0px 0 black, 0 0px black, 3px 0 black, 0 -3px black;
+}
+
+.privacy-policy-subtitle {
+  font-size: 32px;
+  margin-top: 50px;
+  color: rgb(150, 0, 0);
+}
+
+.privacy-policy-text {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}

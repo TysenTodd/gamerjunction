@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+.newsletter-wrapper {
+  width: 100%;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter {
+  width: 65%;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 200px;
+  margin-left: 50px;
+  gap: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(45deg, rgb(150, 0, 0) 25%, transparent 25%) -50px 0,
+    linear-gradient(135deg, rgb(150, 0, 0) 25%, transparent 25%) -50px 0,
+    linear-gradient(45deg, transparent 75%, rgb(150, 0, 0) 75%),
+    linear-gradient(135deg, transparent 75%, rgb(150, 0, 0) 75%);
+  background-size: 1300px 600px;
+  border: 10px solid black;
+}
+
+.newsletter h1 {
+  color: white;
+  font-size: 55px;
+  font-weight: 800;
+  font-family: Lato;
+  text-shadow: 0px 0 black, 0 0px black, 2px 0 black, 0 -2px black;
+}
+
+.newsletter p {
+  color: white;
+  font-size: 20px;
+  font-family: Lato;
+  font-weight: 400;
+}
+
+.newsletter div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  width: 730px;
+  height: 70px;
+  border-radius: 85px;
+  border: 2px solid black;
+}
+
+.newsletter input {
+  width: 300px;
+  margin-left: 30px;
+  border: none;
+  outline: none;
+  color: black;
+  font-size: 24px;
+  font-family: Lato;
+}
+
+.newsletter div button {
+  width: 210px;
+  height: 70px;
+  border-radius: 80px;
+  background: black;
+  color: white;
+  font-size: 24px;
+  font-family: Lato;
+  cursor: pointer;
+}
+
+/* View for Max-Width 1280px */
+@media (max-width: 1280px) {
+  .newsletter {
+    width: 100%; /* Slightly reduce width */
+    margin-right: 25px;
+  }
+}
+
+/* View for Max-Width 1024px */
+@media (max-width: 1024px) {
+  .newsletter {
+    margin-right: 50px;
+  }
+
+  .newsletter h1 {
+    font-size: 35px; /* Further reduced for smaller screens */
+  }
+
+  .newsletter p {
+    font-size: 16px; /* Further reduced for smaller screens */
+  }
+
+  .newsletter div {
+    max-width: 600px; /* Reduce maximum width */
+  }
+}
+
+/* View for Max-Width 800px */
+@media (max-width: 800px) {
+  .newsletter {
+    margin-right: 50px;
+  }
+  .newsletter h1 {
+    font-size: 30px; /* Further reduced for smaller screens */
+  }
+
+  .newsletter p {
+    font-size: 14px; /* Further reduced for smaller screens */
+  }
+
+  .newsletter div {
+    max-width: 500px; /* Further reduce maximum width */
+  }
+}
+
+/* View for Max-Width 500px */
+@media (max-width: 500px) {
+  .newsletter {
+    margin-right: 50px;
+  }
+
+  .newsletter h1 {
+    font-size: 25px; /* Further reduced for smaller screens */
+  }
+
+  .newsletter p {
+    font-size: 12px; /* Further reduced for smaller screens */
+  }
+
+  .newsletter div {
+    max-width: 400px; /* Further reduce maximum width */
+  }
+}

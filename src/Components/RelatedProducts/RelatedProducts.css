@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+.related-products {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 90vh;
+  background: #222;
+}
+
+.related-products h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+  font-family: Lato;
+  text-shadow: 0px 0 black, 0 0px black, 2px 0 black, 0 -2px black;
+}
+
+.related-products hr {
+  height: 6px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+.relatedproducts-item {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+/*View for Max-Width 500px*/
+@media only screen and (min-width: 0px) and (max-width: 500px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 180vh;
+    background: #222;
+  }
+  .related-products h1 {
+    font-size: 20px;
+  }
+
+  .related-products hr {
+    width: 150px;
+    height: 4px;
+  }
+
+  .relatedproducts-item {
+    gap: 20px;
+  }
+}
+
+/*View for Max-Width 800px*/
+@media only screen and (min-width: 501px) and (max-width: 800px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 180vh;
+    background: #222;
+  }
+  .related-products h1 {
+    font-size: 40px;
+  }
+
+  .related-products hr {
+    width: 180px;
+    height: 5px;
+  }
+
+  .relatedproducts-item {
+    gap: 25px;
+  }
+}
+
+/*View for Max-Width 1024px*/
+@media only screen and (min-width: 801px) and (max-width: 1024px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 140vh;
+    background: #222;
+  }
+
+  .related-products h1 {
+    font-size: 45px;
+  }
+
+  .related-products hr {
+    width: 190px;
+    height: 5px;
+  }
+
+  .relatedproducts-item {
+    gap: 28px;
+  }
+}
+
+/*View for Max-Width 1280px*/
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 140vh;
+    background: #222;
+  }
+  .related-products h1 {
+    font-size: 48px;
+  }
+
+  .related-products hr {
+    width: 195px;
+    height: 6px;
+  }
+
+  .relatedproducts-item {
+    gap: 29px;
+  }
+}
+
+/*View for Max-Width 1366px*/
+@media only screen and (min-width: 1281px) and (max-width: 1366px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 150vh;
+    background: #222;
+  }
+
+  .related-products h1 {
+    font-size: 50px;
+  }
+
+  .related-products hr {
+    width: 200px;
+    height: 6px;
+  }
+
+  .relatedproducts-item {
+    gap: 30px;
+  }
+}
+
+/*View for Max-Width 1536px*/
+@media only screen and (min-width: 1367px) and (max-width: 1536px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 130vh;
+    background: #222;
+  }
+  .related-products h1 {
+    font-size: 52px;
+  }
+
+  .related-products hr {
+    width: 205px;
+    height: 6px;
+  }
+
+  .relatedproducts-item {
+    gap: 32px;
+  }
+}
+
+/*View for Max-Width 1780px*/
+@media only screen and (min-width: 1537px) and (max-width: 1780px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 130vh;
+    background: #222;
+  }
+  .related-products h1 {
+    font-size: 54px;
+  }
+
+  .related-products hr {
+    width: 210px;
+    height: 6px;
+  }
+
+  .relatedproducts-item {
+    gap: 34px;
+  }
+}
+
+/*View for Max-Width 1838px*/
+@media only screen and (min-width: 1780px) and (max-width: 1838px) {
+  .related-products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 50px;
+    height: 150vh;
+    background: #222;
+  }
+  .related-products h1 {
+    font-size: 54px;
+  }
+
+  .related-products hr {
+    width: 210px;
+    height: 6px;
+  }
+
+  .relatedproducts-item {
+    gap: 34px;
+  }
+}

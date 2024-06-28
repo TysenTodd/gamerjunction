@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+.terms-of-service-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Lato;
+  color: #333;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.terms-of-service-title {
+  font-size: 55px;
+  color: rgb(150, 0, 0);
+  margin-bottom: 20px;
+  text-shadow: 0px 0 black, 0 0px black, 3px 0 black, 0 -3px black;
+}
+
+.terms-of-service-content {
+  line-height: 1.6;
+}
+
+.terms-of-service-content p {
+  margin-bottom: 15px;
+  color: white;
+  font-size: 22px;
+}
+
+.terms-of-service-content strong {
+  font-weight: bold;
+  color: rgb(150, 0, 0);
+}
