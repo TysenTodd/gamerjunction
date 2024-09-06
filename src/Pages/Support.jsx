@@ -1,12 +1,12 @@
 import React from "react";
 import FAQ from "../Components/FAQ/FAQ";
-import PrivacyPolicy from "../Components/PrivacyPolicy/PrivacyPolicy";
-import TermsOfService from "../Components/TermsOfService/TermsOfService";
+import ContactForm from "../Components/ContactForm/ContactForm";
 
 const Support = () => {
   return (
     <div>
       <FAQ />
+      <ContactForm />
     </div>
   );
 };

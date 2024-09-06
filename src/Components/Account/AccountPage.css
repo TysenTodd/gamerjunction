@@ -1,0 +1,76 @@
+.account-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #999;
+}
+
+.account-info {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.required-fields {
+  color: red;
+  float: right;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.info-item label {
+  font-weight: bold;
+}
+
+.info-value {
+  color: #999; /* Grayed out text */
+}
+
+.edit-btn {
+  display: inline-block;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+}
+
+.logout-button {
+  display: inline-block;
+  text-align: center;
+  background-color: rgb(150, 0, 0);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  width: 200px;
+  font-size: 18px;
+}
+
+.edit-btn:hover {
+  background-color: #333;
+}

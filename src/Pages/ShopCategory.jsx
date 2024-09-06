@@ -9,19 +9,42 @@ const ShopCategory = (props) => {
   const { all_products } = useContext(ShopContext);
   const productsPerPage = 24;
   const [currentPage, setCurrentPage] = useState(1);
+  const [sortOption, setSortOption] = useState("default"); // Add state for sorting option
 
+  // Filter and sort products
   const filteredProducts = all_products.filter(
     (item) => item.category === props.category
   );
-  const totalProducts = filteredProducts.length;
+
+  // Sort products based on the selected option
+  const sortedProducts = [...filteredProducts].sort((a, b) => {
+    switch (sortOption) {
+      case "price-asc":
+        return a.new_price - b.new_price;
+      case "price-desc":
+        return b.new_price - a.new_price;
+      case "rating":
+        return b.rating - a.rating; // Assuming you have a rating field
+      case "newest":
+        return new Date(b.date) - new Date(a.date); // Assuming you have a date field
+      default:
+        return 0;
+    }
+  });
+
+  const totalProducts = sortedProducts.length;
   const totalPages = Math.ceil(totalProducts / productsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
+  const handleSortChange = (e) => {
+    setSortOption(e.target.value);
+  };
+
   const startIndex = (currentPage - 1) * productsPerPage;
-  const currentProducts = filteredProducts.slice(
+  const currentProducts = sortedProducts.slice(
     startIndex,
     startIndex + productsPerPage
   );
@@ -41,7 +64,14 @@ const ShopCategory = (props) => {
             </div>
           </p>
           <div className="shopcategory-sort">
-            Sort by <img src={dropdown_icon} alt="" />
+            Sort by
+            <select value={sortOption} onChange={handleSortChange}>
+              <option value="default">Default</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="rating">Rating</option>
+              <option value="newest">Newest</option>
+            </select>
           </div>
         </div>
       )}

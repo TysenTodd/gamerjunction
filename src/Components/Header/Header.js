@@ -12,21 +12,32 @@ import "./Header.css";
 
 const Header = ({ images }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [fade, setFade] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+      setFade(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+        setFade(false);
+      }, 1500);
     }, 4000);
+
     return () => clearInterval(interval);
-  }, [images]);
+  }, [images.length]);
 
   return (
     <div className="header">
-      <img
-        src={images[currentImageIndex]}
-        alt="Banner"
-        className="header-image"
-      />
+      {images.map((image, index) => (
+        <img
+          key={index}
+          src={image}
+          alt="Banner"
+          className={`header-image ${
+            index === currentImageIndex ? "show" : ""
+          } ${fade ? "fade-out" : ""}`}
+        />
+      ))}
     </div>
   );
 };

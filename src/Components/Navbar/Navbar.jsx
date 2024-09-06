@@ -7,7 +7,7 @@ import cart_icon from "../Assets/cart-icon.png";
 import backgroundVideo from "../Assets/navbar-bg.mp4";
 import { ShopContext } from "../../Context/ShopContext";
 
-const Navbar = () => {
+const Navbar = ({ user }) => {
   const [menu, setMenu] = useState("shop");
   const location = useLocation();
   const { getTotalCartItems } = useContext(ShopContext);
@@ -48,6 +48,9 @@ const Navbar = () => {
         break;
       case "/account":
         setMenu("account");
+        break;
+      case "/login":
+        setMenu("account"); // Treat login as account for menu highlighting
         break;
       default:
         setMenu("shop");
@@ -155,8 +158,8 @@ const Navbar = () => {
             onClick={() => handleMenuItemClick("account")}
             className={`TaskClick ${menu === "account" ? "active" : ""}`}
           >
-            <Link className="nav-menu-link" to="/account">
-              Account
+            <Link className="nav-menu-link" to={user ? "/account" : "/login"}>
+              {user ? "Account" : "Login"}
             </Link>
             {menu === "account" && <hr />}
           </li>

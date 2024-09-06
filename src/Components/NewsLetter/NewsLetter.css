@@ -1,140 +1,199 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
-
-.newsletter-wrapper {
+.newsletter {
   width: 100%;
-  background-color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 1200px;
+  padding: 40px;
+  margin-left: 300px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: transparent;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.newsletter {
-  width: 65%;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 200px;
-  margin-left: 50px;
-  gap: 30px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  background: linear-gradient(45deg, rgb(150, 0, 0) 25%, transparent 25%) -50px 0,
-    linear-gradient(135deg, rgb(150, 0, 0) 25%, transparent 25%) -50px 0,
-    linear-gradient(45deg, transparent 75%, rgb(150, 0, 0) 75%),
-    linear-gradient(135deg, transparent 75%, rgb(150, 0, 0) 75%);
-  background-size: 1300px 600px;
-  border: 10px solid black;
+.newsletter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(150, 0, 0, 0.8), transparent),
+    linear-gradient(135deg, rgba(150, 0, 0, 0.8), transparent),
+    linear-gradient(45deg, transparent 75%, rgba(150, 0, 0, 0.8) 75%),
+    linear-gradient(135deg, transparent 75%, rgba(150, 0, 0, 0.8) 75%);
+  background-size: 1300px 1300px;
+  animation: gradientAnimation 10s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .newsletter h1 {
-  color: white;
-  font-size: 55px;
-  font-weight: 800;
-  font-family: Lato;
-  text-shadow: 0px 0 black, 0 0px black, 2px 0 black, 0 -2px black;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .newsletter p {
-  color: white;
-  font-size: 20px;
-  font-family: Lato;
-  font-weight: 400;
+  font-size: 1.5rem;
+  color: #fff;
+  margin-bottom: 40px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.newsletter div {
+.input-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  background: white;
-  width: 730px;
-  height: 70px;
-  border-radius: 85px;
-  border: 2px solid black;
+  justify-content: center;
 }
 
 .newsletter input {
   width: 300px;
-  margin-left: 30px;
-  border: none;
+  height: 50px;
+  padding: 0 20px;
+  border: 2px solid #ccc;
+  border-radius: 25px 0 0 25px;
+  font-size: 1.2rem;
   outline: none;
-  color: black;
-  font-size: 24px;
-  font-family: Lato;
+  color: #333;
+  background-color: #fff;
 }
 
-.newsletter div button {
-  width: 210px;
-  height: 70px;
-  border-radius: 80px;
-  background: black;
-  color: white;
-  font-size: 24px;
-  font-family: Lato;
+.newsletter button {
+  width: 150px;
+  height: 55px;
+  background-color: #222;
+  color: #fff;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  font-size: 1.2rem;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* View for Max-Width 1280px */
+.newsletter button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.newsletter button .checkmark {
+  display: inline-block;
+  animation: checkmarkAnimation 0.5s ease-in-out;
+}
+
+@keyframes checkmarkAnimation {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.newsletter button:hover:not(:disabled) {
+  background-color: #111;
+}
+
+/* Media queries */
+@media (max-width: 1780px) {
+  .newsletter {
+    width: 65%;
+    margin: 50px auto;
+  }
+}
+
+@media (max-width: 1536px) {
+  .newsletter {
+    width: 70%;
+    margin: 50px auto;
+  }
+}
+
 @media (max-width: 1280px) {
   .newsletter {
-    width: 100%; /* Slightly reduce width */
-    margin-right: 25px;
+    width: 80%;
+    margin: 50px auto;
   }
 }
 
-/* View for Max-Width 1024px */
 @media (max-width: 1024px) {
   .newsletter {
-    margin-right: 50px;
+    width: 90%;
+    margin: 50px auto;
   }
 
   .newsletter h1 {
-    font-size: 35px; /* Further reduced for smaller screens */
+    font-size: 2.5rem;
   }
 
   .newsletter p {
-    font-size: 16px; /* Further reduced for smaller screens */
+    font-size: 1.2rem;
   }
 
-  .newsletter div {
-    max-width: 600px; /* Reduce maximum width */
+  .input-container {
+    max-width: 600px;
   }
 }
 
-/* View for Max-Width 800px */
 @media (max-width: 800px) {
   .newsletter {
-    margin-right: 50px;
+    width: 80%;
+    margin: 50px auto;
   }
+
   .newsletter h1 {
-    font-size: 30px; /* Further reduced for smaller screens */
+    font-size: 2rem;
   }
 
   .newsletter p {
-    font-size: 14px; /* Further reduced for smaller screens */
+    font-size: 1rem;
   }
 
-  .newsletter div {
-    max-width: 500px; /* Further reduce maximum width */
+  .input-container {
+    max-width: 500px;
   }
 }
 
-/* View for Max-Width 500px */
 @media (max-width: 500px) {
   .newsletter {
-    margin-right: 50px;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
   }
 
   .newsletter h1 {
-    font-size: 25px; /* Further reduced for smaller screens */
+    font-size: 1.5rem;
   }
 
   .newsletter p {
-    font-size: 12px; /* Further reduced for smaller screens */
+    font-size: 0.9rem;
   }
 
-  .newsletter div {
-    max-width: 400px; /* Further reduce maximum width */
+  .input-container {
+    flex-direction: column;
+  }
+
+  .newsletter input,
+  .newsletter button {
+    width: 80%;
+    margin-bottom: 10px;
   }
 }

@@ -1,12 +1,12 @@
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./Components/Navbar/Navbar";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import Shop from "./Pages/Shop";
 import ShopCategory from "./Pages/ShopCategory";
 import Product from "./Pages/Product";
 import Cart from "./Pages/Cart";
 import LoginSignup from "./Pages/LoginSignup";
-import Account from "./Pages/Account";
 import Support from "./Pages/Support";
 import Header from "./Components/Header/Header";
 import Footer from "./Components/Footer/Footer";
@@ -22,9 +22,12 @@ import support_banner from "./Components/Assets/support_banner.png";
 import About from "./Components/About/About";
 import PrivacyPolicy from "./Components/PrivacyPolicy/PrivacyPolicy";
 import TermsOfService from "./Components/TermsOfService/TermsOfService";
+import AccountPage from "./Components/Account/AccountPage";
+import AccountActivity from "./Pages/AccountActivity";
+import ManageAccount from "./Pages/ManageAccount";
+import Security from "./Pages/Security";
 
 // Banner Transitions for Specific Pages
-
 const shopImages = [
   sale_pc_banner,
   sale_console_banner,
@@ -38,10 +41,19 @@ const gearImages = [sale_gear_banner, gear_banner];
 const supportImages = [support_banner];
 
 function App() {
+  const [user, setUser] = useState({
+    name: FormData.firstName,
+    email: FormData.email,
+  }); // Example user object
+
+  const handleLogout = () => {
+    setUser(null); // Clear the user state
+  };
+
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Navbar user={user} />
         <Routes>
           <Route
             path="/"
@@ -98,36 +110,21 @@ function App() {
               </>
             }
           />
-
           <Route path="/product/:productId" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/account" element={<LoginSignup />} />
+          <Route
+            path="/account"
+            element={<AccountPage user={user} onLogout={handleLogout} />}
+          />
+          <Route path="/login" element={<LoginSignup />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/about" element={<About />} />
-          <Route
-            path="/products"
-            element={
-              <>
-                <Header images={shopImages} />
-                <Shop />
-              </>
-            }
-          />
-          <Route
-            path="/privacypolicy"
-            element={
-              <>
-                <PrivacyPolicy />
-              </>
-            }
-          />
-          <Route
-            path="/termsofservice"
-            element={
-              <>
-                <TermsOfService />
-              </>
-            }
-          />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/termsofservice" element={<TermsOfService />} />
+          <Route path="/account" element={<AccountPage />} />
+          <Route path="/account-activity" element={<AccountActivity />} />
+          <Route path="/manage-account" element={<ManageAccount />} />
+          <Route path="/security" element={<Security />} />
         </Routes>
         <Footer />
       </BrowserRouter>

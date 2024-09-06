@@ -64,12 +64,24 @@
   cursor: pointer;
 }
 
+.footer-logo-container1 img:hover {
+  height: 120px;
+  width: 170px;
+  transition: 0.5s;
+}
+
 .footer-logo-container2 img {
   height: 95px;
   width: 90px;
   border-radius: 25px;
   padding-top: 5px;
   cursor: pointer;
+}
+
+.footer-logo-container2 img:hover {
+  height: 115px;
+  width: 110px;
+  transition: 0.5s;
 }
 
 .footer-logo-container3 img {
@@ -79,6 +91,12 @@
   padding-left: 40px;
   padding-top: 5px;
   cursor: pointer;
+}
+
+.footer-logo-container3 img:hover {
+  height: 115px;
+  width: 110px;
+  transition: 0.5s;
 }
 
 .footer-copyright {
@@ -104,6 +122,11 @@
 @media only screen and (min-width: 0px) and (max-width: 500px) {
   .footer-links {
     margin-right: 30px;
+  }
+
+  .footer h1 {
+    margin: 0px;
+    padding: 0px;
   }
 
   .footer-social-logo {

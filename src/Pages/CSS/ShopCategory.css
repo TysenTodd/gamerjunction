@@ -88,6 +88,45 @@
   border-bottom: none;
 }
 
+/* Container for the sort by dropdown */
+.shopcategory-sort {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  position: relative;
+}
+
+/* Styling for the select dropdown */
+.shopcategory-sort select {
+  font-size: 16px;
+  font-family: Lato, sans-serif;
+  color: white;
+  padding: 8px 12px;
+  border: none; /* Remove default border */
+  border-radius: 5px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for a professional look */
+}
+
+.shopcategory-sort option {
+  background-color: #333;
+  font-size: 18px;
+}
+
+/* Hover and focus effects for the select dropdown */
+.shopcategory-sort:hover,
+.shopcategory-sort:focus {
+  background-color: rgb(
+    150,
+    0,
+    0
+  ); /* Slightly darker background on hover/focus */
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2); /* Increased shadow on hover/focus */
+}
 /* View for Min-Width 500px and Max-Width 800px */
 @media only screen and (min-width: 500px) and (max-width: 800px) {
   .shopcategory-indexSort {

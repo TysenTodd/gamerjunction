@@ -326,7 +326,7 @@ let all_products = [
 
   {
     id: 10,
-    name: "Logitech - Brio 500 1920x1080p Webcam with Privacy Cover ",
+    name: "Logitech - Brio 500 1920x1080p Webcam with Privacy Cover",
     image: p10_img,
     category: "pc",
     new_price: 129.99,
@@ -380,7 +380,7 @@ let all_products = [
 
   {
     id: 35,
-    name: "Logitech - G915 LIGHTSPEED TKL Wireless Mechanical GL Tactile Switch Gaming Keyboard with RGB Backlighting ",
+    name: "Logitech - G915 LIGHTSPEED TKL Wireless Mechanical GL Tactile Switch Gaming Keyboard with RGB Backlighting",
     image: p35_img,
     category: "pc",
     new_price: 129.99,
@@ -562,7 +562,7 @@ let all_products = [
 
   {
     id: 52,
-    name: "EA Sports FC 24 Standard Edition ",
+    name: "EA Sports FC 24 Standard Edition",
     image: p52_img,
     category: "console",
     new_price: 29.99,
@@ -651,7 +651,7 @@ let all_products = [
 
   {
     id: 61,
-    name: "Paper Mario: The Thousand-Year Door - Nintendo Switch",
+    name: "Animal Crossing: New Horizons, Nintendo Switch",
     image: p61_img,
     category: "console",
     new_price: 49.99,
@@ -726,13 +726,13 @@ let all_products = [
     name: "ELDEN RING Shadow of the Erdtree Edition",
     image: p68_img,
     category: "console",
-    new_price: 69.99,
-    old_price: 79.99,
+    new_price: 59.99,
+    old_price: 69.99,
   },
 
   {
     id: 69,
-    name: "ELDEN RING Shadow of the Erdtree Edition",
+    name: "Street Fighter VI",
     image: p69_img,
     category: "console",
     new_price: 49.99,
@@ -795,7 +795,7 @@ let all_products = [
 
   {
     id: 76,
-    name: "Sony - PlayStation 5 - DualSense Charging Station ",
+    name: "Sony - PlayStation 5 - DualSense Charging Station",
     image: p76_img,
     category: "console",
     new_price: 24.99,
@@ -808,7 +808,7 @@ let all_products = [
     image: p77_img,
     category: "console",
     new_price: 249.99,
-    old_price: "319.99",
+    old_price: 319.99,
   },
 
   {
@@ -968,7 +968,7 @@ let all_products = [
   //Gear
   {
     id: 95,
-    name: "Insignia™ - Essential pc Gaming Chair",
+    name: "Insignia™ - Essential PC Gaming Chair",
     image: p95_img,
     category: "gear",
     new_price: 159.99,
@@ -1031,7 +1031,7 @@ let all_products = [
 
   {
     id: 101,
-    name: "Flash Furniture - Ginny L Contemporary Laminate Home Office Desk",
+    name: "JJS 48 Home Office Gaming Computer Desk",
     image: p101_img,
     category: "gear",
     new_price: 99.99,

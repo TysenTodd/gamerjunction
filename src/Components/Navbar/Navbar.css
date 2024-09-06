@@ -1,21 +1,10 @@
-.nav-dropdown {
-  display: none;
-  cursor: pointer;
-  transition: transform 0.5s ease; /* Add smooth transition for the rotation */
-}
-
-.nav-dropdown.open {
-  transform: rotate(
-    90deg
-  ); /* Rotate 90 degrees when the 'open' class is applied */
-}
-
 .navbar {
   position: relative;
   display: flex;
   justify-content: space-around;
   padding: 15px;
   box-shadow: 0 1px 3px -2px black;
+  z-index: 2; /* Ensure the navbar is above the header */
 }
 
 .nav-logo {
@@ -46,7 +35,7 @@
   align-items: center;
   width: 100%;
   padding: 0 15px;
-  z-index: 1;
+  z-index: 3; /* Ensure the overlay is above the header */
   background-color: rgba(0, 0, 0, 0.9);
 }
 
@@ -65,11 +54,17 @@
   text-decoration: none;
   padding: 0; /* Remove default padding */
   margin: 0; /* Remove default margin */
+  z-index: 3; /* Ensure the menu is above the header */
 }
 
 .nav-menu-link {
   color: white;
   text-decoration: none;
+  transition: font-size 0.5s;
+}
+
+.nav-menu-link:hover {
+  font-size: 45px;
 }
 
 .nav-menu li {
@@ -92,6 +87,12 @@
   height: 100px;
   width: 100px;
   cursor: pointer;
+}
+
+.nav-cart img:hover {
+  height: 120px;
+  width: 120px;
+  transition: 0.5s;
 }
 
 .nav-cart img:active {
@@ -135,16 +136,6 @@
     padding: 5px;
   }
 
-  .nav-overlay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
   .nav-logo img {
     height: 150px;
   }
@@ -175,16 +166,6 @@
     flex-direction: column;
     align-items: center;
     padding: 5px;
-  }
-
-  .nav-overlay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
   }
 
   .nav-logo img {
@@ -218,16 +199,6 @@
     padding: 10px;
   }
 
-  .nav-overlay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0 15px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
   .nav-logo img {
     height: 200px;
   }
@@ -257,16 +228,6 @@
     flex-direction: column;
     align-items: center;
     padding: 5px;
-  }
-
-  .nav-overlay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
   }
 
   .nav-logo img {
@@ -299,21 +260,11 @@
     padding: 10px 0px;
   }
 
-  .nav-overlay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
   .nav-dropdown {
     display: block;
     width: 30px;
     transition: 0.5s;
-    z-index: 1000;
+    z-index: 4; /* Ensure the dropdown icon is above the header */
     margin-bottom: 40px;
   }
 
@@ -331,6 +282,7 @@
     top: 50px;
     left: 0;
     padding: 10px 0;
+    z-index: 3; /* Ensure the menu is above the header */
   }
 
   .nav-menu-visible {
@@ -357,19 +309,10 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 499px) {
   .navbar {
     padding: 5px;
-  }
-
-  .nav-overlay {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 0px;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.9);
+    overflow: hidden;
   }
 
   .nav-logo img {
@@ -389,5 +332,40 @@
   .nav-cart-count {
     margin-left: -5px;
     font-size: 12px;
+  }
+  .nav-dropdown {
+    display: block;
+    width: 30px;
+    transition: 0.5s;
+    z-index: 5; /* Ensure the dropdown icon is above the header */
+    margin-bottom: 400px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    padding: 20px 0;
+    z-index: 6; /* Ensure the menu is above the header */
+  }
+
+  .nav-menu-visible {
+    display: flex;
+    z-index: 5; /* Ensure the visible menu is above the header */
+  }
+
+  .nav-overlay {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 15px;
+    z-index: 3; /* Ensure the overlay is above the header but below the menu */
+    background-color: rgba(0, 0, 0, 0.9);
   }
 }

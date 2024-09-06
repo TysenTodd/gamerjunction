@@ -1,18 +1,22 @@
-// Offers.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useInView } from "react-intersection-observer";
 import "./Offers.css";
 import exclusive_image from "../Assets/exclusive_image.png";
 
 const Offers = () => {
   const navigate = useNavigate();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
 
   const offerShopNow = () => {
     navigate("/gear");
   };
 
   return (
-    <div className="offers-background">
+    <div ref={ref} className={`offers-background ${inView ? "slide-in" : ""}`}>
       <div className="offers">
         <div className="offers-left">
           <h1>ENHANCE</h1>

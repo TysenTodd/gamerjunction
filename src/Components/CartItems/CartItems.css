@@ -207,7 +207,13 @@
   }
 }
 /* View for Max-Width 800px */
-@media only screen and (min-width: 501px) and (max-width: 800px) {
+@media only screen and (min-width: 499px) and (max-width: 800px) {
+  .cartitems-format-main {
+    grid-template-columns: 0.5fr 2fr 1fr 1fr 1fr;
+    gap: 30px;
+    font-size: 16px;
+  }
+
   .cartitems-format-main p {
     display: none;
   }
